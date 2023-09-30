@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKALA GAMBAR TEKNIK</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar">
+        <ul>
+          <li><b>SKALTEK</b></li>
+          <li onclick="alert('Baca deskripsi bro')"><a href="#sampai">About</a></li>
+          <li><a href="https://github.com/racommit/">Github</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="wrapper-1">
+      <div class="content">
+        <div class="description content-item" id='sampai'>
+          <h1>SKALA GAMBAR TEKNIK</h1>
+          <br />
+          <p>
+            <span class="paraph"></span>Skala gambar teknik mengacu pada
+            perbandingan antara ukuran objek sebenarnya dengan ukuran gambar
+            yang digambarkan. Skala ini penting dalam gambar teknik untuk
+            memastikan akurasi dan konsistensi dalam representasi visual suatu
+            objek atau struktur. <br /><br />
+            <span class="paraph"></span>Skala gambar umumnya dinyatakan dalam
+            bentuk rasio atau perbandingan. Contohnya, jika skala gambar adalah
+            1:100, itu berarti setiap satuan panjang dalam gambar setara dengan
+            100 satuan panjang sebenarnya. Jadi, jika ada sebuah garis yang
+            panjangnya 1 cm dalam gambar dengan skala 1:100, itu berarti panjang
+            sebenarnya dari objek tersebut adalah 100 cm. Beberapa skala gambar
+            umum yang digunakan adalah 1:1, 1:10, 1:50, 1:100, dan sebagainya,
+            tergantung pada ukuran objek yang digambarkan dan kebutuhan
+            perancangan atau dokumentasi. <br /><br />
+            <span class="paraph"></span>Pemilihan skala gambar harus
+            mempertimbangkan ruang kertas, keterbacaan, dan level detail yang
+            diinginkan. Skala yang tepat memungkinkan orang yang melihat gambar
+            teknik dapat dengan mudah memahami dimensi sebenarnya dari objek
+            tersebut.
+          </p>
+          <br />
+          <img src="skala.jpg" alt="skala" />
+        </div>
+        <div class="calc content-item">
+          <div class="formulir">
+            <label for="panjang">Panjang atau ukuran sebenarnya (cm)</label><br />
+            <input type="text" name="Panjang" id="panjang" maxlength="8" placeholder=".cm" oninput="validateInteger(this)"/>
+            <div class="pilih">
+              <div class="pilih-1 item-pilih" >
+                <label for="skala-besar">Skala Perbesaran</label><br />
+                <select name="skala-besar" id="select1" onchange="proses('select1')">
+                    <option value=""></option>
+                  <option value="50">50 :1</option>
+                  <option value="20">20 :1</option>
+                  <option value="10">10 :1</option>
+                  <option value="5">5 :1</option>
+                  <option value="2">2 :1</option>
+                </select>
+              </div>
+
+              <div class="pilih-1 item-pilih" >
+                <label for="skala-normal">Skala Normal</label><br />
+                <select name="skala-normal" id="select2" onchange="proses('select2')">
+                <option value=""></option>
+                 <option value="1">1:1</option>
+                </select>
+              </div>
+
+              <div class="pilih-1 item-pilih">
+                <label for="skala-besar">Skala Perkecilan</label><br />
+                <select name="skala-besar" id="select3" onchange="proses('select3')">
+                <option value=""></option>
+                <option value="2">1:2</option>
+                <option value="5">1:5</option>
+                <option value="10">1:10</option>
+                <option value="20">1:20</option>
+                <option value="50">1:50</option>
+                <option value="100">1:100</option>
+                <option value="200">1:200</option>
+                <option value="500">1:500</option>
+                <option value="1000">1:1000</option>
+                <option value="2000">1:2000</option>
+                <option value="5000">1:5000</option>
+                <option value="10000">1:10000</option>
+                </select>
+              </div>
+            </div>
+            <div class="btn-reset button" onclick="reset()">Reset</div>
+            <!-- <div class="btn-proses button" onclick="proses()">Mulai</div><br> --> 
+            <div class="akhir">
+                Kamu dapat menggambar dengan ukuran : <br>
+                <div id="hasil">HASIL</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>  
+    <div class="end">dibuat oleh | RizkyAgusti</div>
+</body>
+  
+</html>
