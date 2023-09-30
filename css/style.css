@@ -207,4 +207,8 @@ nav a{
         text-align: center;
         display: block;
     }
+
+    .description h1{
+        font-size: 30px;
+    }
 }
