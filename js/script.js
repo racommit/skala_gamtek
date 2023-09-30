@@ -1,6 +1,6 @@
 console.log("JS TEST, HAS BEEN STARTED!"); //test apakah javascript sudah berfungsi atau belum
 
-var selectedValue1, selectedIndex2, selectedIndex3;
+var selectedValue1, selectedIndex2, selectedIndex3, akhir;
 
 var initialSelections = {
   select1: document.getElementById("select1").value,
@@ -21,7 +21,8 @@ function validateInteger(input) {
 
 function proses(selectedId) {
   var panjang = document.getElementById("panjang");
-  var nilaiPanjang = parseInt(panjang.value, 10);
+  var nilaiPanjang = parseFloat(panjang.value);
+  console.log(nilaiPanjang);
 
   var tampil = document.getElementById("hasil");
 
@@ -45,20 +46,32 @@ function proses(selectedId) {
   selectedValue2 = select2.options[selectedIndex2].value;
   selectedValue3 = select3.options[selectedIndex3].value;
 
-  console.log(selectedValue1, selectedValue2, selectedValue3);
+  var akhir1 = parseFloat(selectedValue1);
+  var akhir2 = parseFloat(selectedValue2);
+  var akhir3 = parseFloat(selectedValue3);
+
+    console.log(akhir1,akhir2,akhir3);
+  function isFloat(value) {
+        return typeof value === "number" && !isNaN(value) && value % 1 !== 0;
+  }
 
   //   if(nilaiPanjang != Number.isInteger(nilaiPanjang)){
   //     tampil.innerHTML = "MASUKKAN NILAI DENGAN BENAR";
   //   }
-  if (Number.isInteger(nilaiPanjang) && selectedValue1 > 0) {
-    hasil = nilaiPanjang * selectedValue1;
-    tampil.innerHTML = hasil + "cm";
-  } else if (Number.isInteger(nilaiPanjang) && selectedValue2 > 0) {
-    hasil = nilaiPanjang * selectedValue2;
-    tampil.innerHTML = hasil + "cm";
-  } else if (Number.isInteger(nilaiPanjang) && selectedValue3 > 0) {
-    hasil = nilaiPanjang / selectedValue3;
-    tampil.innerHTML = hasil + "cm";
+  if ((isFloat(nilaiPanjang) || Number.isInteger(nilaiPanjang)) && selectedValue1 > 0) {
+    akhir = nilaiPanjang * akhir1;
+    tampil.innerHTML = akhir % 1 !== 0 ? akhir.toFixed(2) + "cm" : Math.floor(akhir) + "cm";
+  } else if (
+    (isFloat(nilaiPanjang) || Number.isInteger(nilaiPanjang)) && selectedValue2 > 0
+  ) {
+    akhir = nilaiPanjang * akhir2;
+    tampil.innerHTML = akhir % 1 !== 0 ? akhir.toFixed(2) + "cm" : Math.floor(akhir) + "cm";
+  } else if (
+    isFloat(nilaiPanjang) || Number.isInteger(nilaiPanjang) &&
+    selectedValue3 > 0
+  ) {
+    akhir = nilaiPanjang / akhir3;
+    tampil.innerHTML = akhir % 1 !== 0 ? akhir.toFixed(2) + "cm" : Math.floor(akhir) + "cm";
   } else {
     tampil.innerHTML = "masukkin nilai yang bener bro";
   }
